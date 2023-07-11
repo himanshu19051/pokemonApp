@@ -6,7 +6,7 @@ import { EvolutionPageComponent } from './components/evolution-page/evolution-pa
 
 const routes: Routes = [
   {path:'',component:ListComponent},
-  {path:'detail-page',component:DetailPageComponent},
+  {path:'detail-page/:id',component:DetailPageComponent},
   {path:'evolution-page',component:EvolutionPageComponent},
   { path: '**', redirectTo: '' }
 ];

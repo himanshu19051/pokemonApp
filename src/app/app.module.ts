@@ -8,13 +8,15 @@ import { DetailPageComponent } from './components/detail-page/detail-page.compon
 import { EvolutionPageComponent } from './components/evolution-page/evolution-page.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { HttpClientModule } from '@angular/common/http';
+import { ProfilePageComponent } from './components/profile-page/profile-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
     DetailPageComponent,
-    EvolutionPageComponent
+    EvolutionPageComponent,
+    ProfilePageComponent
   ],
   imports: [
     BrowserModule,
