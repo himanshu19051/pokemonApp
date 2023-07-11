@@ -33,7 +33,6 @@ export class ListComponent implements OnInit, OnDestroy  {
     this.subscription = this.pokemonService
       .getNext().subscribe({
         next:response=>{
-          console.log('response:->',response);
           this.pokemonService.next = response.next;
           const details = response.results.map((i: any) => this.pokemonService.get(i.url));
           this.subscription = concat(...details).subscribe((response: any) => {

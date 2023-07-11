@@ -5,7 +5,7 @@
   </div>
 
   <div id="Profile-page" class="tabcontent" *ngIf="currentTab===Tabs.PROFILE">
-    <app-profile-page></app-profile-page>
+    <app-profile-page [profileData]="profileData"></app-profile-page>
   </div>
   
   <div id="Evolution-page" class="tabcontent" *ngIf="currentTab===Tabs.EVOLUTION">

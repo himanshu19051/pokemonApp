@@ -30,6 +30,10 @@ export class PokemonService {
     return this.http.get<any>(url);
   }
 
+  getProfileDetails(id:number): Observable<any>{
+    return this.get(this.url+id);
+  }
+
   getNext(): Observable<any> {
     const url = this.next === '' ? `${this.url}?offset=0&limit=12` : this.next;
     return this.http.get<any>(url);
