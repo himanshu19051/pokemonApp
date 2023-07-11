@@ -1,14 +1,14 @@
 <div class="container">
   <div class="tab">
-    <button class="tablinks active">Stats/Details</button>
-    <button class="tablinks">Evolution</button>
+    <button class="tablinks active" [ngClass]="{'active':currentTab===Tabs.PROFILE}" (click)="currentTab=Tabs.PROFILE">Profile Details</button>
+    <button class="tablinks" [ngClass]="{'active':currentTab===Tabs.EVOLUTION}" (click)="currentTab=Tabs.EVOLUTION">Evolution</button>
   </div>
 
-  <div id="Profile-page" class="tabcontent" style="display:block">
+  <div id="Profile-page" class="tabcontent" *ngIf="currentTab===Tabs.PROFILE">
     <app-profile-page></app-profile-page>
   </div>
   
-  <div id="Paris" class="tabcontent">
+  <div id="Evolution-page" class="tabcontent" *ngIf="currentTab===Tabs.EVOLUTION">
     <h3>Paris</h3>
     <p>Paris is the capital of France.</p>
   </div>

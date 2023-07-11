@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { TabEnums } from 'src/app/enum/App.enum';
 
 @Component({
   selector: 'app-detail-page',
@@ -10,6 +11,8 @@ import { Subscription } from 'rxjs';
 export class DetailPageComponent implements OnInit,OnDestroy  {
 
   subscriptions: Subscription[] = [];
+  currentTab = TabEnums.PROFILE;
+  Tabs=TabEnums;
 
   constructor(private route: ActivatedRoute){}
 
