@@ -39,4 +39,15 @@
     border-top: none;
     height: 100%;
   }
+
+  .back-margin{margin-right: 1rem;}
+
+  @media only screen and (max-width: 480px) {
+    .back-margin{margin-right: 0;}
+    .tab button{padding: 10px 10px;}
+  }
+
+  @media only screen and (max-width: 320px) {
+    .tab button{padding: 5px 5px;}
+  }
   
