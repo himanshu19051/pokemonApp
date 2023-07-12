@@ -1,11 +1,16 @@
 <div class="container">
-  <div class="tab">
-    <button class="tablinks active" [ngClass]="{'active':currentTab===Tabs.PROFILE}" (click)="currentTab=Tabs.PROFILE">Profile Details</button>
-    <button class="tablinks" [ngClass]="{'active':currentTab===Tabs.EVOLUTION}" (click)="currentTab=Tabs.EVOLUTION">Evolution</button>
+  <div class="tab d-flex justify-content-between align-items-center">
+    <div>
+      <button class="tablinks active" [ngClass]="{'active':currentTab===Tabs.PROFILE}" (click)="currentTab=Tabs.PROFILE">Profile Details</button>
+      <button class="tablinks" [ngClass]="{'active':currentTab===Tabs.EVOLUTION}" (click)="currentTab=Tabs.EVOLUTION">Evolution</button>
+    </div>
+    <div class="me-3">
+      <button type="button" [routerLink]="['/']" class="btn btn-primary back">Back</button>
+    </div>
   </div>
 
   <div id="Profile-page" class="tabcontent" *ngIf="currentTab===Tabs.PROFILE">
-    <app-profile-page [profileData]="profileData"></app-profile-page>
+    <app-profile-page [profileData]="profileData" (activeTab)="activeTab($event)"></app-profile-page>
   </div>
   
   <div id="Evolution-page" class="tabcontent" *ngIf="currentTab===Tabs.EVOLUTION">

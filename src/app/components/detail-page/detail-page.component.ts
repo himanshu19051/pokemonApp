@@ -50,6 +50,10 @@ export class DetailPageComponent implements OnInit,OnDestroy  {
     });
   }
 
+  activeTab(tabName:TabEnums):void{
+    this.currentTab=tabName;
+  }
+
   ngOnDestroy(): void {
     this.subscriptions.forEach(subscription => subscription ? subscription.unsubscribe() : 0);
   }

@@ -6,8 +6,7 @@
             class="img-fluid" style="width: 200px;height: 200px;">
           <h5 class="my-3 text-capitalize">{{profileData?.name}}</h5>
           <div class="d-flex justify-content-center mb-2">
-            <button type="button" class="btn btn-primary">Follow</button>
-            <button type="button" class="btn btn-outline-primary ms-1">Message</button>
+            <button type="button" class="btn btn-primary" (click)="openEvolution()">View Evolution</button>
           </div>
         </div>
       </div>
@@ -31,7 +30,7 @@
             <div class="col-sm-9">
               <p class="text-muted mb-0">
                     <ng-container *ngFor="let type of profileData?.types;let last = last;">
-                        {{type?.type?.name}}<span *ngIf="!last">,</span>
+                        <span class="text-capitalize">{{type?.type?.name}}</span><span *ngIf="!last">,</span>
                     </ng-container>
                 </p>
             </div>
@@ -62,7 +61,7 @@
             <div class="col-sm-9">
               <p class="text-muted mb-0">
                 <ng-container *ngFor="let ability of profileData?.abilities;let last = last;">
-                    {{ability?.ability?.name}}<span *ngIf="!last">,</span>
+                    <span class="text-capitalize">{{ability?.ability?.name}}</span><span *ngIf="!last">,</span>
                 </ng-container>
               </p>
             </div>
@@ -75,7 +74,7 @@
             <div class="col-sm-9">
               <p class="text-muted mb-0">
                 <ng-container *ngFor="let move of profileData?.moves;let last = last;">
-                    {{move?.move?.name}}<span *ngIf="!last">,</span>
+                   <span class="text-capitalize">{{move?.move?.name}}</span><span *ngIf="!last">, </span>
                 </ng-container>
               </p>
             </div>
@@ -90,7 +89,14 @@
                 <tbody>
                     <ng-container *ngFor="let stat of profileData?.stats">
                         <tr>
-                            <td class="w-50">{{stat?.stat?.name}}</td>
+                            <td class="w-50 text-capitalize">
+                              <ng-container>
+                                <span *ngIf="stat?.stat?.name==='hp'; else capitalize" class="text-uppercase">{{stat?.stat?.name}}</span>
+                              </ng-container>
+                              <ng-template #capitalize>
+                                {{stat?.stat?.name}}
+                              </ng-template>
+                            </td>
                             <td>{{stat?.base_stat}}</td>
                         </tr>
                     </ng-container>
