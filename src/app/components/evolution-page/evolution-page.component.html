@@ -1,101 +1,22 @@
 <div class="container">
     <div class="row d-flex align-items-center">
-
-      <div class="col-sm-3 mb-4">
-        <div class="card shadow-sm">
-          <a class="text-dark card-text">
-            <img class="card-image" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg" alt="">
-            <div class="caption caption d-flex justify-content-center">
-              <p>bulbasaur</p>
-            </div>
-          </a>
+      <ng-container *ngFor="let stage of pokemon.evolutions;let index=index,let last=last">
+        <div class="col-sm-3 mb-4">
+          <div class="card shadow-sm" [ngClass]="{'card-highlight':stage.id===pokemon.id}">
+            <a class="text-dark card-text">
+              <img class="card-image" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/{{stage.id}}.svg" alt="">
+              <div class="caption caption d-flex justify-content-center">
+                <p>{{stage.name}}</p>
+              </div>
+            </a>
+          </div>
         </div>
-      </div>
 
-      <div class="arrow-container col-sm-1">
-        <span>Level 16</span>
-        <i class="icono-arrow1-left left-arrow"></i>
-        <i class="icono-arrow1-down down-arrow"></i>
-       </div>
-
-      <div class="col-sm-3 mb-4">
-        <div class="card shadow-sm">
-          <a class="text-dark card-text">
-            <img class="card-image" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg" alt="">
-            <div class="caption caption d-flex justify-content-center">
-              <p>bulbasaur</p>
-            </div>
-          </a>
+        <div class="arrow-container col-sm-1" *ngIf="!last">
+          <span>Level {{pokemon.evolutions[index+1].level}}</span>
+          <i class="icono-arrow1-left left-arrow"></i>
+          <i class="icono-arrow1-down down-arrow"></i>
         </div>
-      </div>
-
-      <div class="arrow-container col-sm-1">
-        <span>Level 16</span>
-        <i class="icono-arrow1-left left-arrow"></i>
-        <i class="icono-arrow1-down down-arrow"></i>
-       </div>
-
-      <div class="col-sm-3 mb-4">
-        <div class="card shadow-sm">
-          <a class="text-dark card-text">
-            <img class="card-image" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg" alt="">
-            <div class="caption caption d-flex justify-content-center">
-              <p>bulbasaur</p>
-            </div>
-          </a>
-        </div>
-      </div>
-
-      <div class="arrow-container col-sm-1">
-        <span>Level 16</span>
-        <i class="icono-arrow1-left left-arrow"></i>
-        <i class="icono-arrow1-down down-arrow"></i>
-       </div>
-
-       <div class="col-sm-3 mb-4">
-        <div class="card shadow-sm card-highlight">
-          <a class="text-dark card-text">
-            <img class="card-image" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg" alt="">
-            <div class="caption caption d-flex justify-content-center">
-              <p>bulbasaur</p>
-            </div>
-          </a>
-        </div>
-      </div>
-
-      <div class="arrow-container col-sm-1">
-        <span>Level 16</span>
-        <i class="icono-arrow1-left left-arrow"></i>
-        <i class="icono-arrow1-down down-arrow"></i>
-       </div>
-    
-       <div class="col-sm-3 mb-4">
-        <div class="card shadow-sm">
-          <a class="text-dark card-text">
-            <img class="card-image" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg" alt="">
-            <div class="caption caption d-flex justify-content-center">
-              <p>bulbasaur</p>
-            </div>
-          </a>
-        </div>
-      </div>
-
-      <div class="arrow-container col-sm-1">
-        <span>Level 16</span>
-        <i class="icono-arrow1-left left-arrow"></i>
-        <i class="icono-arrow1-down down-arrow"></i>
-       </div>
-
-       <div class="col-sm-3 mb-4">
-        <div class="card shadow-sm">
-          <a class="text-dark card-text">
-            <img class="card-image" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg" alt="">
-            <div class="caption caption d-flex justify-content-center">
-              <p>bulbasaur</p>
-            </div>
-          </a>
-        </div>
-      </div>
-
+      </ng-container>
     </div>
 </div>
