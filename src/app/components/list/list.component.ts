@@ -55,6 +55,10 @@ export class ListComponent implements OnInit, OnDestroy  {
     console.log('scrolled down!!');
   }
 
+  navigateToProfile(id:string){
+    this.pokemonService.navigateByUrl(`/detail-page/${id}`);
+  }
+
   ngOnDestroy(): void {
     this.subscriptions.forEach(subscription => subscription ? subscription.unsubscribe() : 0);
   }

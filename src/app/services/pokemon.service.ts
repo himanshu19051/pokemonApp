@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
@@ -12,7 +13,8 @@ export class PokemonService {
   private _pokemons: any[] = [];
   private _next: string = '';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+              private router: Router) { }
 
   get pokemons(): any[] {
     return this._pokemons;
@@ -37,5 +39,9 @@ export class PokemonService {
   getNext(): Observable<any> {
     const url = this.next === '' ? `${this.url}?offset=0&limit=12` : this.next;
     return this.http.get<any>(url);
+  }
+
+  navigateByUrl(url:string){
+    this.router.navigateByUrl(url);
   }
 }

@@ -12,12 +12,13 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 export class DetailPageComponent implements OnInit,OnDestroy  {
 
   subscriptions: Subscription[] = [];
-  currentTab = TabEnums.PROFILE;
+  currentTab!:TabEnums;
   Tabs=TabEnums;
   Id=-1;
   profileData:any;
 
-  constructor(private route: ActivatedRoute,
+  constructor(
+      private route: ActivatedRoute,
       private pokemonService: PokemonService){}
 
   set subscription(subscription: Subscription) {
@@ -31,9 +32,21 @@ export class DetailPageComponent implements OnInit,OnDestroy  {
     });
   }
 
-  getProfileDetails(Id:number): void{
-    this.subscription = this.pokemonService.getProfileDetails(Id).subscribe(res=>{
-      this.profileData=res;
+  getProfileDetails(Id:number): void {
+    this.subscription = this.pokemonService
+      .getProfileDetails(Id)
+      .subscribe({
+        next:response=>{
+          this.profileData=response;
+          this.currentTab=this.Tabs.PROFILE;
+        },
+        error:error=>{
+          console.log('Error Occurred:', error);
+          this.pokemonService.navigateByUrl('');
+        },
+        complete: () => {
+          console.log('Request complete');
+        }
     });
   }
 

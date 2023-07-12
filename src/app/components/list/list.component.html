@@ -8,7 +8,7 @@
     
     <div class="row">
       <div *ngFor="let pokemon of pokemons" class="col-sm-4 mb-4">
-        <div class="card shadow-sm" [routerLink]="['/detail-page', pokemon.id]">
+        <div class="card shadow-sm" (click)="navigateToProfile(pokemon.id)">
           <a class="text-dark card-text">
             <img class="card-image" [src]="pokemon?.sprites?.other?.dream_world?.front_default" alt="">
             <div class="caption caption d-flex justify-content-center">
