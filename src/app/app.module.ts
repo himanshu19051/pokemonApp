@@ -7,6 +7,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ListComponent,EvolutionPageComponent,DetailPageComponent,ProfilePageComponent } from './components';
 import { LoadingIndicatorInterceptor } from './core/interceptor/loading-indicator.interceptor';
 import { SharedModule } from './shared/shared.module';
+import { CoreModule } from './core/core.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,16 +19,13 @@ import { SharedModule } from './shared/shared.module';
   imports: [
     BrowserModule,
     HttpClientModule,
+    CoreModule,
     SharedModule,
     AppRoutingModule,
     InfiniteScrollModule
     
   ],
-  providers: [{
-    provide:HTTP_INTERCEPTORS,
-    useClass:LoadingIndicatorInterceptor,
-    multi:true
-  }],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
