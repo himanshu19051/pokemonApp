@@ -41,7 +41,6 @@ export class DetailPageComponent implements OnInit,OnDestroy  {
           this.currentTab=this.Tabs.PROFILE;
         },
         error:error=>{
-          console.log('Error Occurred:', error);
           this.pokemonService.navigateByUrl('');
         },
         complete: () => {

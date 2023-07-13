@@ -51,8 +51,7 @@ export class ListComponent implements OnInit, OnDestroy  {
   onScrollDown() {
     if(this.pokemonService.next!=null){
       this.loadMore();
-    } 
-    console.log('scrolled down!!');
+    }
   }
 
   navigateToProfile(id:string){

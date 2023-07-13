@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ProfilePageComponent } from './profile-page.component';
 
 describe('ProfilePageComponent', () => {
@@ -18,4 +17,9 @@ describe('ProfilePageComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should called openEvolution',()=>{
+    component.openEvolution();
+    expect(component.openEvolution).toBeDefined();
+  })
 });
