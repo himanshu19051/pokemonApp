@@ -10,9 +10,9 @@ Angular-Frontend using [PokeApi](https://pokeapi.co)
 ### Install
 Make sure to have angular and node installed.
   1. clone the repo [url](https://github.com/himanshu19051/pokemonApp)
-  - ```cd``` into directory
-  - ```npm install```
-  - ```npm start```
-  - Project is running on ```localhost:4200```
-  - For running unit test cases use ```npm test```
-  - For code coverage use ```ng test --code-coverage```
+  2. ```cd``` into directory
+  3. ```npm install```
+  4. ```npm start```
+  5. Project is running on ```localhost:4200```
+  6. For running unit test cases use ```npm test```
+  7. For code coverage use ```ng test --code-coverage```
