@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ListComponent,DetailPageComponent } from './components';
+import { DetailPageComponent } from './components';
 
 const routes: Routes = [
-  {path:'',component:ListComponent},
+  { 
+    path:'',
+    loadChildren: ()=>import('./core/modules/dashboard/dashboard.module').then(m=>m.DashboardModule)
+  },
   {path:'detail-page/:id',
     component:DetailPageComponent},
   { path: '**', redirectTo: '' }
