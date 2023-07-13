@@ -41,8 +41,8 @@ export class PokemonService {
     return this.http.get<any>(url);
   }
 
-  getSpecies(name: string): Observable<any> {
-    const url = `${environment.apiUrl}pokemon-species/${name}`;
+  getSpecies(id: string): Observable<any> {
+    const url = `${environment.apiUrl}pokemon-species/${id}`;
     return this.http.get<any>(url);
   }
 

@@ -26,7 +26,7 @@ export class EvolutionPageComponent implements OnInit {
   getEvolution() {
     if (!this.pokemon.evolutions || !this.pokemon.evolutions.length) {
       this.pokemon.evolutions = [];
-      this.subscription = this.pokemonService.getSpecies(this.pokemon.name).subscribe(response => {
+      this.subscription = this.pokemonService.getSpecies(this.pokemon.id).subscribe(response => {
         const id = this.getId(response.evolution_chain.url);
         this.subscription = this.pokemonService.getEvolution(id).subscribe(response => this.getEvolves(response.chain));
       });
@@ -49,6 +49,10 @@ export class EvolutionPageComponent implements OnInit {
   getId(url: string): number {
     const splitUrl = url.split('/')
     return +splitUrl[splitUrl.length - 2];
+  }
+
+  navigateToProfile(id:string){
+    this.pokemonService.navigateByUrl(`/detail-page/${id}`);
   }
 
   ngOnDestroy(): void {
