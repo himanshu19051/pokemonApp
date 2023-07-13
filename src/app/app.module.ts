@@ -5,22 +5,23 @@ import { AppComponent } from './app.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ListComponent,EvolutionPageComponent,DetailPageComponent,ProfilePageComponent } from './components';
-import { LoadingComponent } from './shared/components';
 import { LoadingIndicatorInterceptor } from './core/interceptor/loading-indicator.interceptor';
+import { SharedModule } from './shared/shared.module';
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
     DetailPageComponent,
     EvolutionPageComponent,
-    ProfilePageComponent,
-    LoadingComponent
+    ProfilePageComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    SharedModule,
     AppRoutingModule,
     InfiniteScrollModule
+    
   ],
   providers: [{
     provide:HTTP_INTERCEPTORS,
