@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { PokemonService } from 'src/app/services/pokemon.service';
+import { PokemonService } from 'src/app/core/services';
 
 @Component({
   selector: 'app-evolution-page',
