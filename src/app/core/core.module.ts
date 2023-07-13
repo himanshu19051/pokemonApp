@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoadingIndicatorInterceptor } from './interceptor/loading-indicator.interceptor';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
+import { DetailModule } from './modules/detail/detail.module';
 
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    DashboardModule
+    DashboardModule,
+    DetailModule
   ],
   providers:[{
     provide:HTTP_INTERCEPTORS,
