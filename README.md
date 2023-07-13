@@ -1,7 +1,7 @@
 Angular-Frontend using [PokeApi](https://pokeapi.co)
 
 ### Functionality
-- Shows a list of all pokemon \
+- Shows a list of all pokemon
 - When clicked, open detail page
 - Detail page has two tabs
     - Profile Tab
