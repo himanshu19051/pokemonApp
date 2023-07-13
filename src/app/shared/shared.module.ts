@@ -7,6 +7,6 @@ import { LoadingComponent } from './components';
   imports: [
     CommonModule
   ],
-  exports:[LoadingComponent]
+  exports:[LoadingComponent,CommonModule]
 })
 export class SharedModule { }

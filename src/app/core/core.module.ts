@@ -4,14 +4,15 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoadingIndicatorInterceptor } from './interceptor/loading-indicator.interceptor';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
 import { DetailModule } from './modules/detail/detail.module';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule,
     DashboardModule,
-    DetailModule
+    DetailModule,
+    SharedModule
   ],
   providers:[{
     provide:HTTP_INTERCEPTORS,
