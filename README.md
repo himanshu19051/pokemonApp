@@ -9,7 +9,7 @@ Angular-Frontend using [PokeApi](https://pokeapi.co)
 
 ### Install
 Make sure to have angular and node installed.
-  - clone the repo [url](https://github.com/himanshu19051/pokemonApp)
+  1 clone the repo [url](https://github.com/himanshu19051/pokemonApp)
   - ```cd``` into directory
   - ```npm install```
   - ```npm start```
