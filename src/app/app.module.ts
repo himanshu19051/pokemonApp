@@ -3,15 +3,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ListComponent,EvolutionPageComponent,DetailPageComponent,ProfilePageComponent } from './components';
+import { LoadingComponent } from './shared/components';
+import { LoadingIndicatorInterceptor } from './core/interceptor/loading-indicator.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
     DetailPageComponent,
     EvolutionPageComponent,
-    ProfilePageComponent
+    ProfilePageComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
@@ -19,7 +22,11 @@ import { ListComponent,EvolutionPageComponent,DetailPageComponent,ProfilePageCom
     AppRoutingModule,
     InfiniteScrollModule
   ],
-  providers: [],
+  providers: [{
+    provide:HTTP_INTERCEPTORS,
+    useClass:LoadingIndicatorInterceptor,
+    multi:true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

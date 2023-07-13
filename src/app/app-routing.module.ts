@@ -4,7 +4,8 @@ import { ListComponent,EvolutionPageComponent,DetailPageComponent } from './comp
 
 const routes: Routes = [
   {path:'',component:ListComponent},
-  {path:'detail-page/:id',component:DetailPageComponent},
+  {path:'detail-page/:id',
+    component:DetailPageComponent},
   { path: '**', redirectTo: '' }
 ];
 
