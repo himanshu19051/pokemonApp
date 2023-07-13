@@ -35,5 +35,10 @@ describe('EvolutionPageComponent', () => {
       expect(service.getEvolution).toHaveBeenCalled(); 
   })
 
+  it('should called navigateToProfile function',()=>{
+    spy = spyOn(service, 'navigateByUrl').and.returnValue();
+    component.navigateToProfile('3');
+    expect(service.navigateByUrl).toHaveBeenCalled();
+});
 
 });

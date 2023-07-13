@@ -4,7 +4,7 @@ import { ListComponent } from './list.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { PokemonService } from 'src/app/core/services';
-import {of} from 'rxjs';
+import {of, throwError} from 'rxjs';
 import { list, profile } from 'mock/mock';
 
 describe('ListComponent', () => {
@@ -33,7 +33,19 @@ describe('ListComponent', () => {
     spyOn(service, 'getNext').and.returnValue(of(list));
     component.loadMore();
     component.onScrollDown();
+    expect(service.get).toHaveBeenCalled(); 
+  });
+
+  it('should called load more function, api throw error', () => {    
+    spyOn(service, 'getNext').and.returnValue(throwError(()=>{'error'}));
+    component.loadMore();
     expect(service.getNext).toHaveBeenCalled(); 
+  });
+
+  it('should called navigateToProfile function',()=>{
+      spy = spyOn(service, 'navigateByUrl').and.returnValue();
+      component.navigateToProfile('1');
+      expect(service.navigateByUrl).toHaveBeenCalled();
   });
 
 });
