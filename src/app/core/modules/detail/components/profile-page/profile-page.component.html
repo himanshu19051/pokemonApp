@@ -30,7 +30,7 @@
             <div class="col-sm-9">
               <p class="text-muted mb-0">
                     <ng-container *ngFor="let type of profileData?.types;let last = last;">
-                        <span class="text-capitalize">{{type?.type?.name}}</span><span *ngIf="!last">,</span>
+                        <span class="text-capitalize">{{type?.type?.name}}</span><span *ngIf="!last">, </span>
                     </ng-container>
                 </p>
             </div>
@@ -61,7 +61,7 @@
             <div class="col-sm-9">
               <p class="text-muted mb-0">
                 <ng-container *ngFor="let ability of profileData?.abilities;let last = last;">
-                    <span class="text-capitalize">{{ability?.ability?.name}}</span><span *ngIf="!last">,</span>
+                    <span class="text-capitalize">{{ability?.ability?.name}}</span><span *ngIf="!last">, </span>
                 </ng-container>
               </p>
             </div>
