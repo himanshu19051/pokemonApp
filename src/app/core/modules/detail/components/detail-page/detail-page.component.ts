@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { TabEnums } from 'src/app/enum/App.enum';
+import { TabEnums } from 'src/app/core/enum/App.enum';
 import { PokemonService } from 'src/app/core/services';
 
 @Component({

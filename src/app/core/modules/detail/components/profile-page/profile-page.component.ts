@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { TabEnums } from 'src/app/enum/App.enum';
+import { TabEnums } from 'src/app/core/enum/App.enum';
 
 @Component({
   selector: 'app-profile-page',

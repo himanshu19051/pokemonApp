@@ -52,7 +52,7 @@ export class EvolutionPageComponent implements OnInit {
   }
 
   navigateToProfile(id:string){
-    this.pokemonService.navigateByUrl(`/detail-page/${id}`);
+    this.pokemonService.navigateByUrl(`/page/detail/${id}`);
   }
 
   ngOnDestroy(): void {
