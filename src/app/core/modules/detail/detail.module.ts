@@ -3,10 +3,11 @@ import { CommonModule } from '@angular/common';
 
 import { DetailRoutingModule } from './detail-routing.module';
 import { DetailPageComponent } from './components/detail-page';
+import { ProfilePageComponent } from './components/profile-page';
 
 
 @NgModule({
-  declarations: [DetailPageComponent],
+  declarations: [DetailPageComponent,ProfilePageComponent],
   imports: [
     CommonModule,
     DetailRoutingModule
