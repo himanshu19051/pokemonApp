@@ -10,6 +10,7 @@ export class ProfilePageComponent {
   @Input() profileData:any;
   @Output() activeTab = new EventEmitter<TabEnums>();
 
+  /* emit event for Evolution tab Action */
   openEvolution(){
     this.activeTab.emit(TabEnums.EVOLUTION);
   }

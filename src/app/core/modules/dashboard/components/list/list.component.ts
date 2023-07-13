@@ -29,6 +29,7 @@ export class ListComponent implements OnInit, OnDestroy  {
     }
   }
 
+  /* api call for list of pokemon */
   loadMore(): void {
     this.subscription = this.pokemonService
       .getNext().subscribe({
@@ -48,12 +49,14 @@ export class ListComponent implements OnInit, OnDestroy  {
     });
   }
 
+  /* for infinite scroll */
   onScrollDown() {
     if(this.pokemonService.next!=null){
       this.loadMore();
     }
   }
 
+  /* for navigation to profile page */
   navigateToProfile(id:string){
     this.pokemonService.navigateByUrl(`/page/detail/${id}`);
   }

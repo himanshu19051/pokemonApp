@@ -32,6 +32,7 @@ export class DetailPageComponent implements OnInit,OnDestroy  {
     });
   }
 
+  /* fetching particular pokemon detail by Id */
   getProfileDetails(Id:number): void {
     this.subscription = this.pokemonService
       .getProfileDetails(Id)
@@ -49,6 +50,7 @@ export class DetailPageComponent implements OnInit,OnDestroy  {
     });
   }
 
+  /* for changing current tab */
   activeTab(tabName:TabEnums):void{
     this.currentTab=tabName;
   }

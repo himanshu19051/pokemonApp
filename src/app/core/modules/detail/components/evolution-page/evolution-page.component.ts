@@ -23,6 +23,11 @@ export class EvolutionPageComponent implements OnInit {
     this.getEvolution();
   }
 
+  /* 
+   * fetching Evolution detail
+   * first fetching pokemon-species
+   * then call Evolution api 
+  */
   getEvolution() {
     if (!this.pokemon.evolutions || !this.pokemon.evolutions.length) {
       this.pokemon.evolutions = [];
@@ -33,6 +38,7 @@ export class EvolutionPageComponent implements OnInit {
     }
   }
 
+  /* for Evolution chain */
   getEvolves(chain: any) {
     let level = chain.evolution_details.length>0?chain.evolution_details[0].min_level:0;
     this.pokemon.evolutions.push({
