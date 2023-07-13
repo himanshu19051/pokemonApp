@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ListComponent } from './list.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 describe('ListComponent', () => {
   let component: ListComponent;
@@ -8,7 +10,8 @@ describe('ListComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ListComponent]
+      declarations: [ListComponent],
+      imports:[HttpClientTestingModule,InfiniteScrollModule],
     });
     fixture = TestBed.createComponent(ListComponent);
     component = fixture.componentInstance;
