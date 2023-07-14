@@ -5,7 +5,7 @@ Angular-Frontend using [PokeApi](https://pokeapi.co)
 - When clicked, open detail page
 - Detail page has two tabs
     - Profile Tab
-    - Evoution Tab
+    - Evolution Tab
 
 ### Install
 Make sure to have angular and node installed.
