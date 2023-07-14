@@ -39,12 +39,6 @@ export class ListComponent implements OnInit, OnDestroy  {
           this.subscription = concat(...details).subscribe((response: any) => {
             this.pokemonService.pokemons.push(response);
           });
-        },
-        error:error=>{
-          console.log('Error Occurred:', error)
-        },
-        complete: () => {
-          console.log('Request complete');
         }
     });
   }

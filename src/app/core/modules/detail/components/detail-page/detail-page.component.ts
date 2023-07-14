@@ -43,9 +43,6 @@ export class DetailPageComponent implements OnInit,OnDestroy  {
         },
         error:error=>{
           this.pokemonService.navigateByUrl('');
-        },
-        complete: () => {
-          console.log('Request complete');
         }
     });
   }
